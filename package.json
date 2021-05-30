@@ -1,0 +1,77 @@
+{
+  "name": "apycryptocurrency",
+  "version": "0.0.1",
+  "description": "Create multiple wallets in nodejs export api cryptocurrency",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./src/service/index.js",
+    "nodemon": "nodemon --exec npm start",
+    "testprod": "forever start -c nodemon --exec babel-node ./src/service/index.js",
+    "prod": "forever start -c  babel-node ./src/service/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edinsoncs/ApiCryptocurrency.git"
+  },
+  "keywords": [
+    "crypto",
+    "wallet",
+    "apycryptocurrency",
+    "nodejs"
+  ],
+  "author": "Edinsoncs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edinsoncs/ApiCryptocurrency/issues"
+  },
+  "homepage": "https://github.com/edinsoncs/ApiCryptocurrency#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.1",
+    "binance-api-node": "^0.10.13",
+    "bitcoinjs-lib": "^5.1.10",
+    "bitcore-lib": "^8.22.0",
+    "body-parser": "^1.19.0",
+    "coinmarketcap-api": "^3.1.1",
+    "cookie-parser": "^1.4.5",
+    "crypto-balances": "^2.1.3",
+    "crypto-wallets": "^1.0.0",
+    "dotenv": "^8.2.0",
+    "erc20-wallet": "^1.0.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.1.3",
+    "fixer-api": "^2.2.0",
+    "i": "^0.3.6",
+    "jest": "^26.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "monero-nodejs": "^3.2.2",
+    "monero-rpc": "^0.5.0",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.9.25",
+    "monk": "^7.3.0",
+    "node-schedule": "^1.3.2",
+    "npm": "^6.14.7",
+    "psl": "^1.8.0",
+    "qr-image": "^3.2.0",
+    "request-json": "^0.6.5",
+    "rss-parser": "^3.10.0",
+    "send-crypto": "^0.2.14",
+    "simple-bitcoin-wallet": "0.0.9",
+    "superagent": "^6.1.0",
+    "xrp-provider": "0.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "nodemon": "^2.0.4"
+  },
+  "jest": {
+    "silent": false,
+    "verbose": true,
+    "testEnvironment": "node"
+  }
+}
