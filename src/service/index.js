@@ -6,7 +6,8 @@ import mongoose from 'mongoose';
 import database from '../config/database';
 import cookieParser from 'cookie-parser';
 
-database.connnect();
+require('dotenv').config();
+database.connect();
 
 const app = express();
 const schedule = require('node-schedule');
@@ -25,7 +26,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json({limit: '50mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(process.cwd(), 'public')));
 
 
 
@@ -48,21 +49,20 @@ app.use(function(req, res, next) {
 
 
 const { PORT = 80 } = process.env;
-require('dotenv').config();
 
 require('../middleware')(app);
 
 schedule.scheduleJob('*/10 * * * *', function(fireDate){
-    superagent.get('api.crypton10.com/cron/coinmarketcap').then().catch(console.error);
+    superagent.get('https://api.crypton10.com/cron/coinmarketcap').then().catch(console.error);
 });
 
 schedule.scheduleJob('*/60 * * * *', function(fireDate){
-    superagent.get('api.crypton10.com/cron/fixed').then().catch(console.error);
-    superagent.get('api.crypton10.com/cron/global').then().catch(console.error);
+    superagent.get('https://api.crypton10.com/cron/fixed').then().catch(console.error);
+    superagent.get('https://api.crypton10.com/cron/global').then().catch(console.error);
 });
 
 schedule.scheduleJob('*/10 * * * *', function(fireDate){
-    superagent.get('api.crypton10.com/cron/news').then().catch(console.error);
+    superagent.get('https://api.crypton10.com/cron/news').then().catch(console.error);
 });
 
 
