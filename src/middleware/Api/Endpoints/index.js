@@ -109,10 +109,6 @@ r.route('/transfer/bch')
 .post(verify,require('./transfers/bch-transfer'));
 
 
-r.route('/transfer/bch')
-.post(verify,require('./transfers/bch-transfer'));
-
-
 /*
 * New transactions all cryptocurrency
 */
