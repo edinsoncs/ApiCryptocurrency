@@ -1,4 +1,4 @@
-require('../../../../models/CredentialModel');
+require('../../../../models/credentialModel');
 
 import mongoose from 'mongoose';
 const jwt = require('jsonwebtoken');
